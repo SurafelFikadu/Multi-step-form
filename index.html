@@ -102,51 +102,54 @@
           <h1 id="h1-step-2">Select your plan</h1>
           <p id="p-step-2">You have the option of monthly or yearly billing.</p>
           <div id="choose-step-2">
-            <button class="choose-step-2">
+            <div class="choose-step-2 radio">
               <img
                 src="./assets/images/icon-arcade.svg"
                 alt="icon-arcade"
                 class="icon-step-2"
               />
-              <div>
+              <label for="Arcade">
                 <h4>Arcade</h4>
                 <p class="month-step-2" id="arc-month">$9/mo</p>
                 <div class="year-step-2" id="arc-year">
                   <p>$90/yr</p>
                   <p>2 month free</p>
                 </div>
-              </div>
-            </button>
-            <button class="choose-step-2">
+                <input type="radio" id="Arcade" name="recommend" checked />
+              </label>
+            </div>
+            <div class="choose-step-2 radio">
               <img
                 src="./assets/images/icon-advanced.svg"
                 alt="icon-advanced"
                 class="icon-step-2"
               />
-              <div>
+              <label for="Advanced">
                 <h4>Advanced</h4>
                 <p class="month-step-2" id="adv-month">$12/mo</p>
                 <div class="year-step-2" id="adv-year">
                   <p>$120/yr</p>
                   <p>2 month free</p>
                 </div>
-              </div>
-            </button>
-            <button class="choose-step-2">
+                <input type="radio" id="Advanced" name="recommend" />
+              </label>
+            </div>
+            <div class="choose-step-2 radio">
               <img
                 src="./assets/images/icon-pro.svg"
                 alt="icon-pro"
                 class="icon-step-2"
               />
-              <div>
+              <label for="Pro">
                 <h4>Pro</h4>
                 <p class="month-step-2" id="pro-month">$15/mo</p>
                 <div class="year-step-2" id="pro-year">
                   <p>$150/yr</p>
                   <p>2 month free</p>
                 </div>
-              </div>
-            </button>
+                <input type="radio" id="Pro" name="recommend" />
+              </label>
+            </div>
           </div>
           <div id="shift-btn">
             <p class="p-shift" id="to-month">Monthly</p>
@@ -166,45 +169,60 @@
           <h1 id="h1-step-3">Pick add-ons</h1>
           <p id="p-step-3">Add-ons help enhance your gaming experience.</p>
 
-          <div class="check-top-step-3">
-            <div class="check-step-3">
-              <input type="checkbox" class="checkbox" />
-              <div>
-                <h4>Online service</h4>
-                <p>Access to multiplayer games</p>
+          <div class="check-top-step-3 checkbox-wrapper">
+            <input type="checkbox" checked />
+            <label for="" class="checkbox-label">
+              <div class="check-step-3">
+                <div class="checkbox">
+                  <img src="./assets/images/icon-checkmark.svg" alt="" />
+                </div>
+                <div>
+                  <h4>Online service</h4>
+                  <p>Access to multiplayer games</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <span class="month-step-3" id="service-month">+$1/mo</span>
-              <span class="year-step-3" id="service-year">+$10/yr</span>
-            </div>
+              <div class="money-step-3">
+                <span class="month-step-3" id="service-month">+$1/mo</span>
+                <span class="year-step-3" id="service-year">+$10/yr</span>
+              </div>
+            </label>
           </div>
 
-          <div class="check-top-step-3">
-            <div class="check-step-3">
-              <input type="checkbox" class="checkbox" />
-              <div>
-                <h4>Larger storage</h4>
-                <p>Extra 1TB of cloud save</p>
+          <div class="check-top-step-3 checkbox-wrapper">
+            <input type="checkbox" checked />
+            <label for="" class="checkbox-label">
+              <div class="check-step-3 large">
+                <div class="checkbox">
+                  <img src="./assets/images/icon-checkmark.svg" alt="" />
+                </div>
+                <div>
+                  <h4>Larger storage</h4>
+                  <p>Extra 1TB of cloud save</p>
+                </div>
+              </div>
+              <div class="money-step-3">
+                <span class="month-step-3" id="storage-month">+$2/mo</span>
+                <span class="year-step-3" id="storage-year">+$20/yr</span>
               </div>
             </div>
-            <div>
-              <span class="month-step-3" id="storage-month">+$2/mo</span>
-              <span class="year-step-3" id="storage-year">+$20/yr</span>
-            </div>
-          </div>
-          <div class="check-top-step-3">
-            <div class="check-step-3">
-              <input type="checkbox" class="checkbox" />
-              <div>
-                <h4>Customizable Profile</h4>
-                <p>Extra 1TB of cloud save</p>
+          </label>
+          <div class="check-top-step-3 checkbox-wrapper">
+            <input type="checkbox" />
+            <label for="" class="checkbox-label">
+              <div class="check-step-3">
+                <div class="checkbox">
+                  <img src="./assets/images/icon-checkmark.svg" alt="" />
+                </div>
+                <div>
+                  <h4>Customizable Profile</h4>
+                  <p>Custom theme on your profile</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <span class="month-step-3" id="profile-month">+$2/mo</span>
-              <span class="year-step-3" id="profile-year">+$20/yr</span>
-            </div>
+              <div class="money-step-3">
+                <span class="month-step-3" id="profile-month">+$2/mo</span>
+                <span class="year-step-3" id="profile-year">+$20/yr</span>
+              </div>
+            </label>
           </div>
         </div>
         <!-- Step 3 end -->
@@ -218,8 +236,10 @@
           <div class="review">
             <div class="review-1">
               <div>
-                <h4>Arcade(monthly)</h4>
-                <button class="btn-finishs">Change</button>
+                <h4 id="arcade-monthly">Arcade(monthly)</h4>
+                <h4 id="arcade-yearly">Arcade(yearly)</h4>
+                <button id="change-btn" class="btn-finishs">Change</button>
+                <hr>
               </div>
               <div>
                 <span class="month-step-4" id="change-month-step-4">$9/mo</span>
@@ -278,8 +298,8 @@
         </div>
         <!-- Step 5 end -->
         <div id="buttons">
-          <button class="btn" id="go-back">Go Back</button>
-          <button class="btn" id="next-step">Next Step</button>
+          <button class="btn" id="go-back" type="button">Go Back</button>
+          <button class="btn" id="next-step" type="menu">Next Step</button>
         </div>
       </form>
     </main>

@@ -142,6 +142,8 @@ const totalMonth = document.getElementById("total-month-step-4");
 const totalYear = document.getElementById("total-year-step-4");
 const monthTotal = document.getElementById("month-total");
 const yearTotal = document.getElementById("year-total");
+const arcadeMonthly = document.getElementById("arcade-monthly");
+const arcadeYearly = document.getElementById("arcade-yearly");
 
 
 const shiftFunction = () => {
@@ -175,6 +177,8 @@ const shiftFunction = () => {
         totalMonth.style.display = "none";
         monthTotal.style.display = "none";
 
+        arcadeMonthly.style.display = "none";
+        arcadeYearly.style.display = "block";
 
     } else {
         shiftLeft.style.visibility = "visible";
@@ -205,7 +209,15 @@ const shiftFunction = () => {
         largerMonth.style.display = "block";
         totalMonth.style.display = "block";
         monthTotal.style.display = "block";
+
+        arcadeMonthly.style.display = "block";
+        arcadeYearly.style.display = "none";
     }
 }
 
 buttonShift.addEventListener("click", shiftFunction);
+
+
+// ----------step-4 -----------------------
+const change = document.getElementById("change-btn");
+change.addEventListener("click", shiftFunction);
