@@ -20,92 +20,89 @@ const phoneStep1 = document.getElementById("phone");
 
 const emailRequired = document.getElementById("email-required");
 
-const emailValid = new RegExp('^.+@+.+\.+[a-z]+$');
+const emailValid = new RegExp("^.+@+.+.+[a-z]+$");
 
 //function that required for the next function
 const nextButtonFunction = () => {
-    // if function for first step 
-    if (stepOne.style.display != "none") {
-        if(nameStep1.value && phoneStep1.value) {
-            if(emailValid.test(emailStep1.value)) {
-                stepOne.style.display = "none";
-                stepTwo.style.display = "block";
-                backButton.style.visibility = "visible";
-                numOne.style.color = "white";
-                numOne.style.background = "none";
-                numTwo.style.color = "hsl(213, 96%, 18%)";
-                numTwo.style.background = "hsl(0, 0%, 87%)";
-            }
-            else if (emailStep1.value == "") {
-                emailRequired.textContent = "This field is required";
-            }
-            else {
-                emailRequired.textContent = "Please insert the correct email";
-            }
-        }
-    }
-
-    // if function for the second step
-    else if(stepTwo.style.display !== "none") {
-        stepTwo.style.display = "none";
-        stepThree.style.display = "block";
-        numTwo.style.color = "white";
-        numTwo.style.background = "none";
-        numThree.style.color = "hsl(213, 96%, 18%)";
-        numThree.style.background = "hsl(0, 0%, 87%)";
-    }
-    //if function for the third step
-    else if(stepThree.style.display != "none") {
-        stepThree.style.display = "none";
-        stepFour.style.display = "block";
-        numThree.style.color = "white";
-        numThree.style.background = "none";
-        numFour.style.color = "hsl(213, 96%, 18%)";
-        numFour.style.background = "hsl(0, 0%, 87%)";
-        nextButton.textContent = "Confirm"
-    }
-
-    //if function for the fourth step
-    else {
-        stepFour.style.display = "none";
-        stepFive.style.display = "block";
-        buttons.style.display = "none"
-    }
-}
-
-const backButtonFunction = () => {
-    if(stepTwo.style.display != "none") {
-        stepTwo.style.display = "none";
-        stepOne.style.display = "block";
-        backButton.style.visibility = "hidden";
-
-        numTwo.style.color = "white";
-        numTwo.style.background = "none";
-        numOne.style.color = "hsl(213, 96%, 18%)";
-        numOne.style.background = "hsl(0, 0%, 87%)";
-
-        emailRequired.textContent = "";
-    } else if(stepThree.style.display !== "none") {
-        stepThree.style.display = "none";
+  // if function for first step
+  if (stepOne.style.display != "none") {
+    if (nameStep1.value && phoneStep1.value) {
+      if (emailValid.test(emailStep1.value)) {
+        stepOne.style.display = "none";
         stepTwo.style.display = "block";
-
-        numThree.style.color = "white";
-        numThree.style.background = "none";
+        backButton.style.visibility = "visible";
+        numOne.style.color = "white";
+        numOne.style.background = "none";
         numTwo.style.color = "hsl(213, 96%, 18%)";
         numTwo.style.background = "hsl(0, 0%, 87%)";
-    } else if(stepFour.style.display !== "none") {
-        stepFour.style.display = "none";
-        stepThree.style.display = "block";
-        nextButton.textContent = "Next Step";
-
-        numFour.style.color = "white";
-        numFour.style.background = "none";
-        numThree.style.color = "hsl(213, 96%, 18%)";
-        numThree.style.background = "hsl(0, 0%, 87%)";
+      } else if (emailStep1.value == "") {
+        emailRequired.textContent = "This field is required";
+      } else {
+        emailRequired.textContent = "Please insert the correct email";
+      }
     }
-}
+  }
 
-nextButton.addEventListener("click", nextButtonFunction);
+  // if function for the second step
+  else if (stepTwo.style.display !== "none") {
+    stepTwo.style.display = "none";
+    stepThree.style.display = "block";
+    numTwo.style.color = "white";
+    numTwo.style.background = "none";
+    numThree.style.color = "hsl(213, 96%, 18%)";
+    numThree.style.background = "hsl(0, 0%, 87%)";
+  }
+  //if function for the third step
+  else if (stepThree.style.display != "none") {
+    stepThree.style.display = "none";
+    stepFour.style.display = "block";
+    numThree.style.color = "white";
+    numThree.style.background = "none";
+    numFour.style.color = "hsl(213, 96%, 18%)";
+    numFour.style.background = "hsl(0, 0%, 87%)";
+    nextButton.textContent = "Confirm";
+  }
+
+  //if function for the fourth step
+  else {
+    stepFour.style.display = "none";
+    stepFive.style.display = "block";
+    buttons.style.display = "none";
+  }
+};
+
+const backButtonFunction = () => {
+  if (stepTwo.style.display != "none") {
+    stepTwo.style.display = "none";
+    stepOne.style.display = "block";
+    backButton.style.visibility = "hidden";
+
+    numTwo.style.color = "white";
+    numTwo.style.background = "none";
+    numOne.style.color = "hsl(213, 96%, 18%)";
+    numOne.style.background = "hsl(0, 0%, 87%)";
+
+    emailRequired.textContent = "";
+  } else if (stepThree.style.display !== "none") {
+    stepThree.style.display = "none";
+    stepTwo.style.display = "block";
+
+    numThree.style.color = "white";
+    numThree.style.background = "none";
+    numTwo.style.color = "hsl(213, 96%, 18%)";
+    numTwo.style.background = "hsl(0, 0%, 87%)";
+  } else if (stepFour.style.display !== "none") {
+    stepFour.style.display = "none";
+    stepThree.style.display = "block";
+    nextButton.textContent = "Next Step";
+
+    numFour.style.color = "white";
+    numFour.style.background = "none";
+    numThree.style.color = "hsl(213, 96%, 18%)";
+    numThree.style.background = "hsl(0, 0%, 87%)";
+  }
+};
+
 backButton.addEventListener("click", backButtonFunction);
 
 // shift to month or to year locate on step-2
@@ -145,79 +142,322 @@ const yearTotal = document.getElementById("year-total");
 const arcadeMonthly = document.getElementById("arcade-monthly");
 const arcadeYearly = document.getElementById("arcade-yearly");
 
-
 const shiftFunction = () => {
-    if(shiftLeft.style.visibility !== "hidden") {
-        shiftLeft.style.visibility = "hidden";
-        shiftRight.style.visibility = "visible";
-        monthly.style.color = "hsl(231, 11%, 63%)";
-        yearly.style.color = "hsl(213, 96%, 18%)";
-        arcYear.style.display = "block";
-        advYear.style.display = "block";
-        proYear.style.display = "block";
-        arcMonth.style.display = "none";
-        advMonth.style.display = "none";
-        proMonth.style.display = "none";
-        
-        serviceYear.style.display = "block";
-        storageYear.style.display = "block";
-        profileYear.style.display = "block";
-        serviceMonth.style.display = "none";
-        storageMonth.style.display = "none";
-        profileMonth.style.display = "none";
+  if (shiftLeft.style.visibility !== "hidden") {
+    shiftLeft.style.visibility = "hidden";
+    shiftRight.style.visibility = "visible";
+    monthly.style.color = "hsl(231, 11%, 63%)";
+    yearly.style.color = "hsl(213, 96%, 18%)";
+    arcYear.style.display = "block";
+    advYear.style.display = "block";
+    proYear.style.display = "block";
+    arcMonth.style.display = "none";
+    advMonth.style.display = "none";
+    proMonth.style.display = "none";
 
-        changeYear.style.display = "block";
-        onlineYear.style.display = "block";
-        largerYear.style.display = "block";
-        totalYear.style.display = "block";
-        yearTotal.style.display = "block";
-        changeMonth.style.display = "none";
-        onlineMonth.style.display = "none";
-        largerMonth.style.display = "none";
-        totalMonth.style.display = "none";
-        monthTotal.style.display = "none";
+    serviceYear.style.display = "block";
+    storageYear.style.display = "block";
+    profileYear.style.display = "block";
+    serviceMonth.style.display = "none";
+    storageMonth.style.display = "none";
+    profileMonth.style.display = "none";
 
-        arcadeMonthly.style.display = "none";
-        arcadeYearly.style.display = "block";
+    changeYear.style.display = "block";
+    onlineYear.style.display = "block";
+    largerYear.style.display = "block";
+    totalYear.style.display = "block";
+    yearTotal.style.display = "block";
+    changeMonth.style.display = "none";
+    onlineMonth.style.display = "none";
+    largerMonth.style.display = "none";
+    totalMonth.style.display = "none";
+    monthTotal.style.display = "none";
 
-    } else {
-        shiftLeft.style.visibility = "visible";
-        shiftRight.style.visibility = "hidden";
-        yearly.style.color = "hsl(231, 11%, 63%)";
-        monthly.style.color = "hsl(213, 96%, 18%)";
-        arcYear.style.display = "none";
-        advYear.style.display = "none";
-        proYear.style.display = "none";
-        arcMonth.style.display = "block";
-        advMonth.style.display = "block";
-        proMonth.style.display = "block";
-        
-        serviceYear.style.display = "none";
-        storageYear.style.display = "none";
-        profileYear.style.display = "none";
-        serviceMonth.style.display = "block";
-        storageMonth.style.display = "block";
-        profileMonth.style.display = "block";
+    arcadeMonthly.style.display = "none";
+    arcadeYearly.style.display = "block";
+  } else {
+    shiftLeft.style.visibility = "visible";
+    shiftRight.style.visibility = "hidden";
+    yearly.style.color = "hsl(231, 11%, 63%)";
+    monthly.style.color = "hsl(213, 96%, 18%)";
+    arcYear.style.display = "none";
+    advYear.style.display = "none";
+    proYear.style.display = "none";
+    arcMonth.style.display = "block";
+    advMonth.style.display = "block";
+    proMonth.style.display = "block";
 
-        changeYear.style.display = "none";
-        onlineYear.style.display = "none";
-        largerYear.style.display = "none";
-        totalYear.style.display = "none";
-        yearTotal.style.display = "none";
-        changeMonth.style.display = "block";
-        onlineMonth.style.display = "block";
-        largerMonth.style.display = "block";
-        totalMonth.style.display = "block";
-        monthTotal.style.display = "block";
+    serviceYear.style.display = "none";
+    storageYear.style.display = "none";
+    profileYear.style.display = "none";
+    serviceMonth.style.display = "block";
+    storageMonth.style.display = "block";
+    profileMonth.style.display = "block";
 
-        arcadeMonthly.style.display = "block";
-        arcadeYearly.style.display = "none";
-    }
-}
+    changeYear.style.display = "none";
+    onlineYear.style.display = "none";
+    largerYear.style.display = "none";
+    totalYear.style.display = "none";
+    yearTotal.style.display = "none";
+    changeMonth.style.display = "block";
+    onlineMonth.style.display = "block";
+    largerMonth.style.display = "block";
+    totalMonth.style.display = "block";
+    monthTotal.style.display = "block";
+
+    arcadeMonthly.style.display = "block";
+    arcadeYearly.style.display = "none";
+  }
+};
 
 buttonShift.addEventListener("click", shiftFunction);
 
-
 // ----------step-4 -----------------------
 const change = document.getElementById("change-btn");
-change.addEventListener("click", shiftFunction);
+change.addEventListener("click", () => {
+  shiftFunction();
+  addChange();
+});
+
+// ------------------------------------
+const arcadeRadio = document.getElementById("Arcade-radio");
+const advancedRadio = document.getElementById("advanced-radio");
+const proRadio = document.getElementById("Pro-radio");
+
+// step two to step four
+const stepTwoFour = () => {
+  if (arcadeRadio.checked) {
+    arcadeMonthly.innerHTML = "Arcade(monthly)";
+    arcadeYearly.textContent = "Arcade(yearly)";
+    changeMonth.textContent = "$9/mo";
+    changeYear.textContent = "$90/yr";
+  } else if (advancedRadio.checked) {
+    arcadeMonthly.innerHTML = "Advanced(monthly)";
+    arcadeYearly.textContent = "Advanced(yearly)";
+    changeMonth.textContent = "$12/mo";
+    changeYear.textContent = "$120/yr";
+  } else if (proRadio.checked) {
+    arcadeMonthly.innerHTML = "Pro(monthly)";
+    arcadeYearly.textContent = "Pro(yearly)";
+    changeMonth.textContent = "$15/mo";
+    changeYear.textContent = "$150/yr";
+  }
+};
+
+// --------------------------------------------
+const checkOnlineService = document.getElementById("check-online-service");
+const checkLargerStorage = document.getElementById("check-larger-storage");
+const checkCustomizableProfle = document.getElementById(
+  "check-customizable-profile"
+);
+
+const onlineService = document.getElementById("online-service-step-4");
+const largerStorage = document.getElementById("larger-storage-step-4");
+const customizableProfile = document.getElementById(
+  "customizable-profile-step-4"
+);
+
+const stepThreeFour = () => {
+  if (!checkOnlineService.checked) {
+    onlineService.style.display = "none";
+  } else if (checkOnlineService.checked) {
+    onlineService.style.display = "flex";
+  }
+
+  if (!checkLargerStorage.checked) {
+    largerStorage.style.display = "none";
+  } else if (checkLargerStorage.checked) {
+    largerStorage.style.display = "flex";
+  }
+
+  if (!checkCustomizableProfle.checked) {
+    customizableProfile.style.display = "none";
+  } else if (checkCustomizableProfle.checked) {
+    customizableProfile.style.display = "flex";
+  }
+};
+
+const totalFunction = () => {
+  if (arcadeRadio.checked) {
+    if (
+      checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$14/mo";
+      yearTotal.textContent = "+$140/mo";
+    } else if (
+      checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$12/mo";
+      yearTotal.textContent = "+$120/mo";
+    } else if (
+      checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$12/mo";
+      yearTotal.textContent = "+$120/mo";
+    } else if (
+      checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$10/mo";
+      yearTotal.textContent = "+$100/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$11/mo";
+      yearTotal.textContent = "+$110/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$11/mo";
+      yearTotal.textContent = "+$110/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$13/mo";
+      yearTotal.textContent = "+$130/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$9/mo";
+      yearTotal.textContent = "+$90/mo";
+    }
+  } else if (advancedRadio.checked) {
+    if (
+      checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$17/mo";
+      yearTotal.textContent = "+$170/mo";
+    } else if (
+      checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$15/mo";
+      yearTotal.textContent = "+$150/mo";
+    } else if (
+      checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$15/mo";
+      yearTotal.textContent = "+$150/mo";
+    } else if (
+      checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$13/mo";
+      yearTotal.textContent = "+$130/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$14/mo";
+      yearTotal.textContent = "+$140/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$14/mo";
+      yearTotal.textContent = "+$140/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$16/mo";
+      yearTotal.textContent = "+$160/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$12/mo";
+      yearTotal.textContent = "+$120/mo";
+    }
+  } else if (proRadio.checked) {
+    if (
+      checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$20/mo";
+      yearTotal.textContent = "+$200/mo";
+    } else if (
+      checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$18/mo";
+      yearTotal.textContent = "+$180/mo";
+    } else if (
+      checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$18/mo";
+      yearTotal.textContent = "+$180/mo";
+    } else if (
+      checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$16/mo";
+      yearTotal.textContent = "+$160/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$17/mo";
+      yearTotal.textContent = "+$170/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$17/mo";
+      yearTotal.textContent = "+$170/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      checkLargerStorage.checked &&
+      checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$19/mo";
+      yearTotal.textContent = "+$190/mo";
+    } else if (
+      !checkOnlineService.checked &&
+      !checkLargerStorage.checked &&
+      !checkCustomizableProfle.checked
+    ) {
+      monthTotal.textContent = "+$15/mo";
+      yearTotal.textContent = "+$150/mo";
+    }
+  }
+};
+
+nextButton.addEventListener("click", () => {
+  nextButtonFunction();
+  stepTwoFour();
+  stepThreeFour();
+  totalFunction();
+});

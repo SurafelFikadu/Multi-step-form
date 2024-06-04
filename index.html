@@ -115,7 +115,12 @@
                   <p>$90/yr</p>
                   <p>2 month free</p>
                 </div>
-                <input type="radio" id="Arcade" name="recommend" checked />
+                <input
+                  type="radio"
+                  id="Arcade-radio"
+                  name="recommend"
+                  checked
+                />
               </label>
             </div>
             <div class="choose-step-2 radio">
@@ -124,14 +129,14 @@
                 alt="icon-advanced"
                 class="icon-step-2"
               />
-              <label for="Advanced">
+              <label for="advanced-radio">
                 <h4>Advanced</h4>
                 <p class="month-step-2" id="adv-month">$12/mo</p>
                 <div class="year-step-2" id="adv-year">
                   <p>$120/yr</p>
                   <p>2 month free</p>
                 </div>
-                <input type="radio" id="Advanced" name="recommend" />
+                <input type="radio" id="advanced-radio" name="recommend" />
               </label>
             </div>
             <div class="choose-step-2 radio">
@@ -147,7 +152,7 @@
                   <p>$150/yr</p>
                   <p>2 month free</p>
                 </div>
-                <input type="radio" id="Pro" name="recommend" />
+                <input type="radio" id="Pro-radio" name="recommend" />
               </label>
             </div>
           </div>
@@ -170,7 +175,7 @@
           <p id="p-step-3">Add-ons help enhance your gaming experience.</p>
 
           <div class="check-top-step-3 checkbox-wrapper">
-            <input type="checkbox" checked />
+            <input type="checkbox" id="check-online-service" checked />
             <label for="" class="checkbox-label">
               <div class="check-step-3">
                 <div class="checkbox">
@@ -189,7 +194,7 @@
           </div>
 
           <div class="check-top-step-3 checkbox-wrapper">
-            <input type="checkbox" checked />
+            <input type="checkbox" id="check-larger-storage" checked />
             <label for="" class="checkbox-label">
               <div class="check-step-3 large">
                 <div class="checkbox">
@@ -204,10 +209,10 @@
                 <span class="month-step-3" id="storage-month">+$2/mo</span>
                 <span class="year-step-3" id="storage-year">+$20/yr</span>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
           <div class="check-top-step-3 checkbox-wrapper">
-            <input type="checkbox" />
+            <input type="checkbox" id="check-customizable-profile" />
             <label for="" class="checkbox-label">
               <div class="check-step-3">
                 <div class="checkbox">
@@ -236,17 +241,17 @@
           <div class="review">
             <div class="review-1">
               <div>
-                <h4 id="arcade-monthly">Arcade(monthly)</h4>
-                <h4 id="arcade-yearly">Arcade(yearly)</h4>
+                <h4 id="arcade-monthly"></h4>
+                <h4 id="arcade-yearly"></h4>
                 <button id="change-btn" class="btn-finishs">Change</button>
-                <hr>
+                <hr />
               </div>
               <div>
                 <span class="month-step-4" id="change-month-step-4">$9/mo</span>
                 <span class="year-step-4" id="change-year-step-4">$90/yr</span>
               </div>
             </div>
-            <div class="review-1">
+            <div class="review-1" id="online-service-step-4">
               <div>
                 <button class="btn-finishs">Online Service</button>
               </div>
@@ -255,13 +260,26 @@
                 <span class="year-step-4" id="online-year-step-4">$10/yr</span>
               </div>
             </div>
-            <div class="review-1">
+            <div class="review-1" id="larger-storage-step-4">
               <div>
                 <button class="btn-finishs">Larger storage</button>
               </div>
               <div>
                 <span class="month-step-4" id="larger-month-step-4">$2/mo</span>
                 <span class="year-step-4" id="larger-year-step-4">$20/yr</span>
+              </div>
+            </div>
+            <div class="review-1" id="customizable-profile-step-4">
+              <div>
+                <button class="btn-finishs">Customizable Profile</button>
+              </div>
+              <div>
+                <span class="month-step-4" id="customizable-month-step-4"
+                  >$2/mo</span
+                >
+                <span class="year-step-4" id="customizable-year-step-4"
+                  >$20/yr</span
+                >
               </div>
             </div>
           </div>
@@ -296,6 +314,7 @@
             at support@loremgaming.com.
           </p>
         </div>
+
         <!-- Step 5 end -->
         <div id="buttons">
           <button class="btn" id="go-back" type="button">Go Back</button>
