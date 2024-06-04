@@ -142,6 +142,9 @@ const yearTotal = document.getElementById("year-total");
 const arcadeMonthly = document.getElementById("arcade-monthly");
 const arcadeYearly = document.getElementById("arcade-yearly");
 
+const customMonth = document.getElementById("customizable-month-step-4");
+const customYear = document.getElementById("customizable-year-step-4");
+
 const shiftFunction = () => {
   if (shiftLeft.style.visibility !== "hidden") {
     shiftLeft.style.visibility = "hidden";
@@ -175,6 +178,9 @@ const shiftFunction = () => {
 
     arcadeMonthly.style.display = "none";
     arcadeYearly.style.display = "block";
+
+    customMonth.style.display = "none";//
+    customYear.style.display = "block";//
   } else {
     shiftLeft.style.visibility = "visible";
     shiftRight.style.visibility = "hidden";
@@ -194,11 +200,14 @@ const shiftFunction = () => {
     storageMonth.style.display = "block";
     profileMonth.style.display = "block";
 
+    customYear.style.display = "none";//
     changeYear.style.display = "none";
     onlineYear.style.display = "none";
     largerYear.style.display = "none";
     totalYear.style.display = "none";
     yearTotal.style.display = "none";
+
+    customMonth.style.display = "block";//
     changeMonth.style.display = "block";
     onlineMonth.style.display = "block";
     largerMonth.style.display = "block";
@@ -216,7 +225,6 @@ buttonShift.addEventListener("click", shiftFunction);
 const change = document.getElementById("change-btn");
 change.addEventListener("click", () => {
   shiftFunction();
-  addChange();
 });
 
 // ------------------------------------
@@ -270,10 +278,10 @@ const stepThreeFour = () => {
     largerStorage.style.display = "flex";
   }
 
-  if (!checkCustomizableProfle.checked) {
-    customizableProfile.style.display = "none";
-  } else if (checkCustomizableProfle.checked) {
+  if (checkCustomizableProfle.checked) {
     customizableProfile.style.display = "flex";
+  } else if (!checkCustomizableProfle.checked) {
+    customizableProfile.style.display = "none";
   }
 };
 
@@ -285,56 +293,56 @@ const totalFunction = () => {
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$14/mo";
-      yearTotal.textContent = "+$140/mo";
+      yearTotal.textContent = "+$140/yr";
     } else if (
       checkOnlineService.checked &&
       checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$12/mo";
-      yearTotal.textContent = "+$120/mo";
+      yearTotal.textContent = "+$120/yr";
     } else if (
       checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$12/mo";
-      yearTotal.textContent = "+$120/mo";
+      yearTotal.textContent = "+$120/yr";
     } else if (
       checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$10/mo";
-      yearTotal.textContent = "+$100/mo";
+      yearTotal.textContent = "+$100/yr";
     } else if (
       !checkOnlineService.checked &&
       checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$11/mo";
-      yearTotal.textContent = "+$110/mo";
+      yearTotal.textContent = "+$110/yr";
     } else if (
       !checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$11/mo";
-      yearTotal.textContent = "+$110/mo";
+      yearTotal.textContent = "+$110/yr";
     } else if (
       !checkOnlineService.checked &&
       checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$13/mo";
-      yearTotal.textContent = "+$130/mo";
+      yearTotal.textContent = "+$130/yr";
     } else if (
       !checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$9/mo";
-      yearTotal.textContent = "+$90/mo";
+      yearTotal.textContent = "+$90/yr";
     }
   } else if (advancedRadio.checked) {
     if (
@@ -343,56 +351,56 @@ const totalFunction = () => {
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$17/mo";
-      yearTotal.textContent = "+$170/mo";
+      yearTotal.textContent = "+$170/yr";
     } else if (
       checkOnlineService.checked &&
       checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$15/mo";
-      yearTotal.textContent = "+$150/mo";
+      yearTotal.textContent = "+$150/yr";
     } else if (
       checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$15/mo";
-      yearTotal.textContent = "+$150/mo";
+      yearTotal.textContent = "+$150/yr";
     } else if (
       checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$13/mo";
-      yearTotal.textContent = "+$130/mo";
+      yearTotal.textContent = "+$130/yr";
     } else if (
       !checkOnlineService.checked &&
       checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$14/mo";
-      yearTotal.textContent = "+$140/mo";
+      yearTotal.textContent = "+$140/yr";
     } else if (
       !checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$14/mo";
-      yearTotal.textContent = "+$140/mo";
+      yearTotal.textContent = "+$140/yr";
     } else if (
       !checkOnlineService.checked &&
       checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$16/mo";
-      yearTotal.textContent = "+$160/mo";
+      yearTotal.textContent = "+$160/yr";
     } else if (
       !checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$12/mo";
-      yearTotal.textContent = "+$120/mo";
+      yearTotal.textContent = "+$120/yr";
     }
   } else if (proRadio.checked) {
     if (
@@ -401,56 +409,56 @@ const totalFunction = () => {
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$20/mo";
-      yearTotal.textContent = "+$200/mo";
+      yearTotal.textContent = "+$200/yr";
     } else if (
       checkOnlineService.checked &&
       checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$18/mo";
-      yearTotal.textContent = "+$180/mo";
+      yearTotal.textContent = "+$180/yr";
     } else if (
       checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$18/mo";
-      yearTotal.textContent = "+$180/mo";
+      yearTotal.textContent = "+$180/yr";
     } else if (
       checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$16/mo";
-      yearTotal.textContent = "+$160/mo";
+      yearTotal.textContent = "+$160/yr";
     } else if (
       !checkOnlineService.checked &&
       checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$17/mo";
-      yearTotal.textContent = "+$170/mo";
+      yearTotal.textContent = "+$170/yr";
     } else if (
       !checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$17/mo";
-      yearTotal.textContent = "+$170/mo";
+      yearTotal.textContent = "+$170/yr";
     } else if (
       !checkOnlineService.checked &&
       checkLargerStorage.checked &&
       checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$19/mo";
-      yearTotal.textContent = "+$190/mo";
+      yearTotal.textContent = "+$190/yr";
     } else if (
       !checkOnlineService.checked &&
       !checkLargerStorage.checked &&
       !checkCustomizableProfle.checked
     ) {
       monthTotal.textContent = "+$15/mo";
-      yearTotal.textContent = "+$150/mo";
+      yearTotal.textContent = "+$150/yr";
     }
   }
 };
